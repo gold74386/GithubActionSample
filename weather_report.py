@@ -144,8 +144,10 @@ def weather_report(this_city):
     # 2. 获取天气
     weather = get_weather(this_city)
     print(f"天气信息： {weather}")
+    wen = run()
+    print(wen)
     # 3. 发送消息
-    send_weather(access_token, weather)
+    send_weather(access_token, weather,wen)
 
 
 
