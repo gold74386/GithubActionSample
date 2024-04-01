@@ -1,5 +1,4 @@
 requests
 bs4
-html5lib
-cn2an
+html5li
 datetime
