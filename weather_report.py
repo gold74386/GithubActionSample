@@ -90,7 +90,7 @@ def run():
         response = requests.get(url, params=params)
         data = response.json()
         result = data['result']['data']
-        txt = f"【{result['year-month']}】\n" \
+        txt = 
               f"公历日期：{result['date']}\n" \
               f"农历日期：{result['lunarYear']} {result['lunar']}\n" \
               f"星期：{result['weekday']}\n" \
@@ -132,7 +132,7 @@ def send_weather(access_token, weather):
                 "value": weather[3]
             },
             "today_fortune": {
-                "value": run().[1]
+                "value": run()
             },
             "today_note": {
                 "value": get_daily_love()
