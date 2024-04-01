@@ -76,7 +76,29 @@ def get_daily_love():
     sentence = all_dict['returnObj'][0]
     daily_love = sentence
     return daily_love
-
+def run() :
+        url = "https://v.juhe.cn/calendar/day"
+        appkey = "fdea011f4839cbc882ef2e3d75cd1bd6"
+        now = datetime.datetime.now()
+        month = str(now.month) # 当前月份
+        day = str(now.day) # 当前日期
+        params = {
+            "key": appkey,
+            "date": f"{now.year}-{month}-{day}"
+        }
+        response = requests.get(url, params=params)
+        data = response.json()
+        result = data['result']['data']
+        text = f"【{result['year-month']}】\n" \
+              f"公历日期：{result['date']}\n" \
+              f"农历日期：{result['lunarYear']} {result['lunar']}\n" \
+              f"星期：{result['weekday']}\n" \
+              f"生肖：{result['animalsYear']}\n" \
+              f"宜：{result['suit']}\n" \
+              f"忌：{result['avoid']}\n" \
+              f"节假日：{result['holiday']}\n"
+        #print(text)
+        return text
 
 def send_weather(access_token, weather):
     # touser 就是 openID
@@ -107,6 +129,9 @@ def send_weather(access_token, weather):
             },
             "wind_dir": {
                 "value": weather[3]
+            },
+            "today_fortune": {
+                "value": run()
             },
             "today_note": {
                 "value": get_daily_love()
