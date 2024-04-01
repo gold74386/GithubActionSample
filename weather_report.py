@@ -100,7 +100,7 @@ def run():
               f"节假日：{result['holiday']}\n")
          
         #print(text)
-        return txt
+        return txt.[2]
 
 def send_weather(access_token, weather):
     # touser 就是 openID
