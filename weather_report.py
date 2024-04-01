@@ -131,7 +131,7 @@ def send_weather(access_token, weather):
                 "value": weather[3]
             },
             "today_fortune": {
-                "value": run()
+                "value": run[0]
             },
             "today_note": {
                 "value": get_daily_love()
