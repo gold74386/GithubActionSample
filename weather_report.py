@@ -90,7 +90,7 @@ def run():
         response = requests.get(url, params=params)
         data = response.json()
         result = data['result']['data']
-        txt =f"公历日期：{result['date']},农历日期：{result['lunarYear']} {result['lunar']},星期：{result['weekday']},宜：{result['suit']},忌：{result['avoid']},节假日：{result['holiday']}" 
+        txt =f"宜：{result['suit']},忌：{result['avoid']},节假日：{result['holiday']}" 
          
         #print(text)
         return txt
