@@ -90,7 +90,7 @@ def run():
         response = requests.get(url, params=params)
         data = response.json()
         result = data['result']['data']
-        text = f"【{result['year-month']}】\n" \
+        txt = f"【{result['year-month']}】\n" \
               f"公历日期：{result['date']}\n" \
               f"农历日期：{result['lunarYear']} {result['lunar']}\n" \
               f"星期：{result['weekday']}\n" \
@@ -99,7 +99,7 @@ def run():
               f"忌：{result['avoid']}\n" \
               f"节假日：{result['holiday']}\n"
         #print(text)
-        return text
+        return txt
 
 def send_weather(access_token, weather):
     # touser 就是 openID
