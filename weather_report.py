@@ -77,7 +77,7 @@ def get_daily_love():
     sentence = all_dict['returnObj'][0]
     daily_love = sentence
     return daily_love
-def run() :
+def run():
         url = "https://v.juhe.cn/calendar/day"
         appkey = "fdea011f4839cbc882ef2e3d75cd1bd6"
         now = datetime.datetime.now()
