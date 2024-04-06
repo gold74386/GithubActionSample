@@ -90,7 +90,24 @@ def run():
         response = requests.get(url, params=params)
         data = response.json()
         result = data['result']['data']
-        txt =f"宜：{result['suit']}" 
+        txt =f"{result['suit']}" 
+         
+        #print(text)
+        return txt
+def runn():
+        url = "https://v.juhe.cn/calendar/day"
+        appkey = "fdea011f4839cbc882ef2e3d75cd1bd6"
+        now = datetime.datetime.now()
+        month = str(now.month) # 当前月份
+        day = str(now.day) # 当前日期
+        params = {
+            "key": appkey,
+            "date": f"{now.year}-{month}-{day}"
+        }
+        response = requests.get(url, params=params)
+        data = response.json()
+        result = data['result']['data']
+        txt =f"{result['lunarYear']} {result['lunar']}" 
          
         #print(text)
         return txt
@@ -107,7 +124,7 @@ def runm():
         response = requests.get(url, params=params)
         data = response.json()
         result = data['result']['data']
-        txt =f"忌：{result['avoid']}" 
+        txt =f"{result['avoid']}" 
          
         #print(text)
         return txt
@@ -147,6 +164,9 @@ def send_weather(access_token, weather):
             },
             "today_fortunel": {
                 "value": runm()
+            },
+            "today_fortunell": {
+                "value": runn()
             },
             "today_note": {
                 "value": get_daily_love()
