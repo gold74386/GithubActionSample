@@ -147,6 +147,7 @@ def send_weather(access_token, weather):
             },
             "today_fortunel": {
                 "value": runm()
+            },
             "today_note": {
                 "value": get_daily_love()
             }
