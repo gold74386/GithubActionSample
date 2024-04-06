@@ -90,7 +90,7 @@ def run():
         response = requests.get(url, params=params)
         data = response.json()
         result = data['result']['data']
-        txt =f"宜：{result['suit']},忌：{result['avoid']},节假日：{result['holiday']}" 
+        txt =f"宜：{result['suit']}" 
          
         #print(text)
         return txt
@@ -108,8 +108,9 @@ def runm():
         data = response.json()
         result = data['result']['data']
         txt =f"忌：{result['avoid']}" 
-        return txt
+         
         #print(text)
+        return txt
 
 def send_weather(access_token, weather):
     # touser 就是 openID
