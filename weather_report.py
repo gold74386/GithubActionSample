@@ -94,6 +94,22 @@ def run():
          
         #print(text)
         return txt
+def runm():
+        url = "https://v.juhe.cn/calendar/day"
+        appkey = "fdea011f4839cbc882ef2e3d75cd1bd6"
+        now = datetime.datetime.now()
+        month = str(now.month) # 当前月份
+        day = str(now.day) # 当前日期
+        params = {
+            "key": appkey,
+            "date": f"{now.year}-{month}-{day}"
+        }
+        response = requests.get(url, params=params)
+        data = response.json()
+        result = data['result']['data']
+        txt =f"忌：{result['avoid']}" 
+        return txt
+        #print(text)
 
 def send_weather(access_token, weather):
     # touser 就是 openID
